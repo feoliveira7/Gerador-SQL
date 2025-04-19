@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Pedido SQL</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="titulo">Gerador de Pedido</h1>
+        <form id="pedidoForm">
+            <label for="tabela">Tabela:</label>
+            <select class="selects" id="tabela" name="tabela" required>
+                <option value="pedidos">Pedidos</option>
+                <option value="clientes">Clientes</option>
+                <option value="produtos">Produtos</option>
+                
+            </select>
+
+            <label for="cliente">Nome do Cliente:</label>
+            <input type="text" oninput="formatarNome()" id="cliente" name="cliente" required>
+
+            <label for="produto">Produto:</label>
+            <select class="selects" id="produto" name="produto" required>
+                <option value="notebook">Notebook</option>
+                <option value="smartphone">Smartphone</option>
+                <option value="tablet">Tablet</option>
+                <option value="monitor">Monitor</option>
+                <option value="teclado">Teclado</option>
+                <
+            </select>
+
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" id="quantidade" name="quantidade" required>
+
+            <button type="button" onclick="gerarSQL()">Gerar SQL</button>
+        </form>
+
+        <h2>SQL Gerado:</h2>
+        <textarea id="sqlOutput" rows="4" readonly></textarea>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
